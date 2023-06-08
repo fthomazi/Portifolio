@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----- Padronização Palavras chave ----*/
+:root {
+  --text-color: white; /* Onde usar a variável (--text-color), vai definir como padrão da configuração texto*/
+  --bg-url: url(./assets/bg-mobile.jpg); /*Variável que direciona fundo de tela*/
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.5);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.light {
+  --text-color: black; /* Onde usar a variável (--text-color), vai definir como padrão da configuração texto*/
+  --bg-url: url(./assets/bg-mobile-light.jpg); /*Variável que direciona fundo de tela*/
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background: var(--bg-url) no-repeat top center / cover;
+  font-size: 16px;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color); /* Substituída pela variável */
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px auto;
+  /*margin-top: 56px;*/
+  /* border: 1px solid blue; -- Para se auxiliar no tamanho das bordas e espacamento */
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 200px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* ----- links ------ */
+ul {
+  list-style: none; /* Retirar os pontos que entram automaticos pelo html ul*/
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px; /* Arredondamento pontas caixinhas */
+
+  backdrop-filter: blur(4px); /* Caixinhas embacadas */
+  -webkit-backdrop-filter: blur(4px); /* Para alguns brouse aceitar e liberar */
+
+  text-decoration: none;
+  font-weight: 500;
+
+  /* ----- Transicionar em quanto tempo, entrada de caixinhas ----- */
+  transition: background 0.2s;
+}
+
+/* ----- Muda caixinhas ao passar mouse em cima (pseudo-selector) ----- */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* ----- Social Links ----- */
+#social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  padding: 24xp 0;
+  font-size: 24px;
+}
+
+/* ----- Alinhamento Icones ----- */
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%; /* Borda redonda */
+}
+
+/* ----- Social Links ----- Quando passar o mouse em cima irá acontecer algo */
+#social-links a:hover {
+  background: var(--highlight-color);
+  padding: 16px;
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
